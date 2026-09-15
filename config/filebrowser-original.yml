@@ -1,0 +1,10 @@
+services:
+  filebrowser:
+    image: filebrowser/filebrowser:v2.23.0
+    container_name: filebrowser
+    ports:
+      - "8089:80"
+    volumes:
+      - /caminho/dos/seus/arquivos:/srv
+      - ./filebrowser.db:/database.db
+    restart: unless-stopped

@@ -1,0 +1,21 @@
+# EXEMPLO PÚBLICO
+# Os valores específicos do TuxFreeTech serão substituídos
+# por valores genéricos nesta documentação.
+
+services:
+  filebrowser:
+    image: gtstef/filebrowser:beta
+    container_name: filebrowser-quantum
+    ports:
+      - "8089:80"
+
+    volumes:
+      - /caminho/dos/seus/arquivos:/srv
+      - filebrowser_config:/config
+      - filebrowser_db:/database
+
+    restart: unless-stopped
+
+volumes:
+  filebrowser_config:
+  filebrowser_db:
